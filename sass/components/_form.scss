@@ -1,0 +1,23 @@
+.form {
+  &-group {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    flex-wrap: wrap;
+  }
+  &__label {
+    font-size: 1.8rem;
+    font-family: $secondary-font;
+    font-weight: 600;
+    flex: 0 0 auto;
+    margin-right: 2rem;
+  }
+  &__input {
+    padding: 0.5rem 1rem;
+    font-family: $primary-font;
+    font-size: 1.6rem;
+    border-radius: 0;
+    // background-color: red;
+  }
+}

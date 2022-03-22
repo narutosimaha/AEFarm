@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AEFarm</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@500;600;700&family=Lato:wght@300;400;700;900&family=Reggae+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- STYLE SHEET -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <!-- SCRIPT -->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js" defer></script>
+
+    <script src="/script/index.js" defer></script>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    /> -->
+  </head>
+  <body>
+    <!----------------------------- START HEADER---------------------------->
+    <nav
+      class="navbar navbar-expand-md navbar-light bg-light nav-bar p-0 pl-md-5"
+    >
+      <!-- <div class="container-fluid"> -->
+      <div class="nav-logo">
+        <a href="#" class="navbar-brand p-4 py-md-0 d-inline-block">AEFARM</a>
+      </div>
+
+      <button
+        class="navbar-toggler me-4"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="dropdown align-self-stretch d-block d-md-none">
+          <div
+            class="dropdown-toggle nav-user"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="nav-user__avatar">
+              <img src="/images/avatar.jpg" alt="User avatar" />
+            </span>
+            <span class="nav-user__name">Vu Tran</span>
+          </div>
+
+          <div
+            class="dropdown-menu nav-user__dropdown"
+            aria-labelledby="dropdownMenuButton"
+          >
+            <a class="dropdown-item nav-user__dropdown-item" href="#"
+              >Thông tin cá nhân</a
+            >
+            <a class="dropdown-item nav-user__dropdown-item" href="#"
+              >Quản lý thiết bị</a
+            >
+          </div>
+        </div>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item nav__item">
+            <a class="nav-link nav__link" aria-current="page" href="#"
+              >Trang chủ</a
+            >
+          </li>
+
+          <li class="nav-item nav__item">
+            <a class="nav-link nav__link" href="#">Điều khiển</a>
+          </li>
+          <li class="nav-item nav__item">
+            <a class="nav-link nav__link" href="#">Xem thống kê</a>
+          </li>
+          <li class="nav-item nav__item">
+            <a class="nav-link nav__link">Thiết lập ngưỡng</a>
+          </li>
+        </ul>
+        <div class="dropdown align-self-stretch d-none d-md-inline-block">
+          <div
+            class="dropdown-toggle nav-user"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="nav-user__avatar">
+              <img src="/images/avatar.jpg" alt="User avatar" />
+            </span>
+            <span class="nav-user__name">Vu Tran</span>
+          </div>
+
+          <div
+            class="dropdown-menu nav-user__dropdown"
+            aria-labelledby="dropdownMenuButton"
+          >
+            <a class="dropdown-item nav-user__dropdown-item" href="#"
+              >Thông tin cá nhân</a
+            >
+            <a class="dropdown-item nav-user__dropdown-item" href="#"
+              >Quản lý thiết bị</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </nav>
+
+    <!----------------------------- END HEADER---------------------------->
+    <section class="section-content mt-lg-4">
+      <h1 class="heading-1 mb-5 d-flex align-items-center">
+        <svg class="heading__icon me-4">
+          <use xlink:href="/images/sprite.svg#icon-folder-open"></use>
+        </svg>
+        Quản lý thiết bị
+      </h1>
+      <div class="row">
+        <div
+          class="col-lg-4 col-12 d-flex d-lg-block justify-content-between mb-4 mb-lg-0"
+        >
+          <figure class="map">
+            <figcaption class="map__unit">(&#13217;)</figcaption>
+            <img src="images/map.png" class="img-fluid" alt="map image" />
+          </figure>
+          <div class="adding-device">
+            <h2 class="heading-2 text-center mb-4">Thêm thiết bị</h2>
+
+            <form class="form">
+              <div class="mb-3 form-group">
+                <label for="types" class="form__label">Loại:</label>
+                <select name="types" id="types" class="form__input">
+                  <option value="Input">Input</option>
+                  <option value="Output">Output</option>
+                </select>
+              </div>
+              <div class="mb-3 form-group">
+                <label for="devices" class="form__label">Thiết bị:</label>
+                <select name="devices" id="devices" class="form__input">
+                  <option value="DHT11">DHT11</option>
+                  <option value="Temperature sensor">Temperature sensor</option>
+                </select>
+              </div>
+              <div class="mb-3 form-group">
+                <label for="outputs" class="form__label">Output kết nối:</label>
+                <select name="outputs" id="outputs" class="form__input">
+                  <option value="3212123">Water pumper (x:26, y:-22)</option>
+                  <option value="3212123">Water pumper (x:26, y:-22)</option>
+                  <option value="3212123">Water pumper (x:26, y:-22)</option>
+                </select>
+              </div>
+
+              <div class="mb-3 form-group">
+                <span class="form__label">Vị trí: </span>
+                <div class="coordinate-group">
+                  <label for="coordinate-x">X</label>
+                  <input
+                    type="text"
+                    value="0"
+                    id="coordinate-x"
+                    name="coordinate-x"
+                  />
+                </div>
+                <div class="coordinate-group">
+                  <label for="coordinate-y">Y</label>
+                  <input
+                    type="text"
+                    value="0"
+                    id="coordinate-y"
+                    name="coordinate-y"
+                  />
+                </div>
+              </div>
+              <div class="mb-5">
+                <span class="form__label">Thiết lập: </span>
+                <div class="threshold">
+                  <span class="threshold-max-title">Max</span>
+                  <span class="threshold-min-title">Min</span>
+                  <span class="threshold__subject">Nhiệt độ (&#8451;): </span>
+                  <input type="text" class="threshold__value" name="temp-max" />
+                  <input type="text" class="threshold__value" name="temp-min" />
+                  <span class="threshold__subject">Độ ẩm (%):</span>
+                  <input type="text" class="threshold__value" name="temp-max" />
+                  <input type="text" class="threshold__value" name="temp-min" />
+                  <span class="threshold__subject">Thời gian kiểm tra:</span>
+
+                  <select
+                    name="checked_time"
+                    class="form__input threshold__checked-time"
+                  >
+                    <option value="300">5 phút</option>
+                    <option value="600">10 phút</option>
+                    <option value="1800">30 phút</option>
+                    <option value="3600">1 tiếng</option>
+                  </select>
+                </div>
+              </div>
+              <button class="button button-primary mx-auto my-0">Thêm</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-8 col-12">
+          <div class="devices">
+            <div class="device-output mb-5">
+              <h2 class="heading-2 device-type mb-5">Output</h2>
+              <div class="device-container">
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+              </div>
+            </div>
+            <div class="device-output">
+              <h2 class="heading-2 device-type mb-5">Input</h2>
+              <div class="device-container">
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+                <figure class="device__figure">
+                  <img
+                    src="/images/avatar.jpg"
+                    alt="device image"
+                    class="device__img mb-3"
+                  />
+
+                  <div class="device__name">Máy bơm</div>
+                  <div class="device__coordinates">
+                    X: <span class="device__coordinate-x"> 36</span> Y:
+                    <span class="device__coordinate-y">-22</span>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="nav-logo lg-font my-5 mx-auto text-center">
+        <a href="#" class="d-inline-block lg-font">AEFARM</a>
+      </div>
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="#" class="nav__link">Find your dream home</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Request proposal</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Download home planner</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Contact us</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Submit your property</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Come work with us!</a>
+        </li>
+      </ul>
+      <p class="copyright">
+        &copy; Copyright 2022 by AE mien trung team. Feel free to use this
+        project for your own purposes. This does NOT apply if you plan to
+        produce your own course or tutorials based on this project.
+      </p>
+    </footer>
+  </body>
+</html>
